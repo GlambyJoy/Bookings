@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Glam by Joy — Leicester MUA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --plum:#2B1720;
+    --plum-deep:#1D1015;
+    --ivory:#F8EFE4;
+    --ivory-soft:#F1E4D3;
+    --gold:#C6994F;
+    --gold-light:#E3C583;
+    --wine:#7A2A41;
+    --rose:#D8A79A;
+    --text-muted:#7A6659;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost',sans-serif;
+    color:var(--plum);
+    background:var(--ivory);
+  }
+
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(43,23,32,0.96);
+    backdrop-filter:blur(6px);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 6vw;
+  }
+  nav .logo{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600; font-size:22px; color:var(--ivory);
+    letter-spacing:0.5px;
+  }
+  nav .logo span{ color:var(--rose); font-style:italic; font-weight:500; }
+  nav ul{
+    list-style:none; display:flex; gap:28px;
+  }
+  nav a{
+    color:var(--gold-light); text-decoration:none; font-size:13px;
+    letter-spacing:1.5px; text-transform:uppercase;
+  }
+  nav a:hover{ color:var(--rose); }
+  nav .nav-links{ display:flex; }
+  @media (max-width:680px){ nav .nav-links{ display:none; } }
+
+  .hero{
+    background:var(--plum);
+    color:var(--ivory);
+    text-align:center;
+    padding:90px 6vw 76px;
+    position:relative;
+  }
+  .hero .location{
+    font-size:12px; letter-spacing:3px; text-transform:uppercase;
+    color:var(--gold-light); margin-bottom:20px;
+  }
+  .hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600; font-size:clamp(52px,9vw,96px);
+    line-height:0.95; letter-spacing:1px;
+  }
+  .hero .sub{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:21px; color:var(--rose);
+    margin:14px 0 34px;
+  }
+  .hero .lede{
+    max-width:600px; margin:0 auto 40px;
+    font-size:16px; line-height:1.8; color:#E9D9C8;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:#25D366; color:#0d3320;
+    font-weight:500; font-size:15px;
+    padding:15px 32px; border-radius:32px;
+    text-decoration:none;
+    box-shadow:0 12px 30px rgba(37,211,102,0.25);
+    transition:transform 0.15s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn svg{ width:20px; height:20px; }
+
+  section{ padding:76px 6vw; }
+  .section-title{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:15px; letter-spacing:3px;
+    text-transform:uppercase; color:var(--wine);
+    text-align:center; margin-bottom:30px;
+  }
+  .bio{
+    max-width:640px; margin:0 auto; text-align:center;
+  }
+  .bio p{
+    font-family:'Cormorant Garamond',serif; font-size:20px;
+    line-height:1.75; color:#4A3226;
+  }
+  .brush-divider{
+    display:flex; align-items:center; justify-content:center;
+    padding:36px 0 0;
+  }
+  .brush-divider svg{ width:220px; height:20px; }
+
+  .info-strip{
+    display:flex; justify-content:center; gap:64px; flex-wrap:wrap;
+    padding-top:44px; text-align:center;
+  }
+  .info-strip .label{
+    font-size:11px; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--wine); margin-bottom:8px;
+  }
+  .info-strip .value{ font-size:14px; color:#4A3226; line-height:1.7; }
+  .info-strip a{ color:var(--wine); text-decoration:none; }
+  .info-strip a:hover{ text-decoration:underline; }
+
+  .menu{ background:var(--ivory-soft); }
+  .menu-list{ max-width:700px; margin:0 auto; }
+  .service{
+    padding:26px 0; border-bottom:1px solid rgba(122,42,65,0.18);
+  }
+  .service:last-child{ border-bottom:none; }
+  .service-top{
+    display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+  }
+  .service-name{
+    font-family:'Cormorant Garamond',serif; font-weight:600; font-size:27px;
+  }
+  .service-price{
+    font-family:'Cormorant Garamond',serif; font-weight:600; font-size:27px;
+    color:var(--wine); white-space:nowrap;
+  }
+  .service-desc{
+    font-size:14.5px; color:var(--text-muted); margin-top:6px; max-width:480px;
+    line-height:1.6;
+  }
+  .service-duration{
+    font-size:11px; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--gold); margin-top:10px;
+  }
+  .class-note{
+    font-size:13px; color:var(--text-muted);
+  }
+
+  .policies-wrap{ max-width:680px; margin:0 auto; }
+  .policies ul{ list-style:none; }
+  .policies li{
+    font-size:14px; line-height:1.75; color:#4A3226;
+    padding-left:20px; position:relative; margin-bottom:12px;
+  }
+  .policies li::before{
+    content:"—"; position:absolute; left:0; color:var(--gold);
+  }
+  .policies li b{ color:var(--plum); font-weight:500; }
+  .consent-note{
+    font-size:13px; line-height:1.8; color:var(--text-muted);
+    margin-top:26px; padding-top:26px; border-top:1px dashed rgba(122,42,65,0.3);
+    text-align:center;
+  }
+
+  footer{
+    background:var(--plum); color:var(--ivory);
+    text-align:center; padding:56px 6vw 64px; position:relative;
+  }
+  footer .cta-line{
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-size:24px;
+    color:var(--rose); margin-bottom:10px;
+  }
+  footer .cta-sub{
+    font-size:12px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--gold-light); margin-bottom:30px;
+  }
+  .footer-contacts{
+    display:flex; justify-content:center; gap:26px; flex-wrap:wrap;
+    margin-bottom:8px;
+  }
+  .footer-contacts a{
+    color:var(--ivory); text-decoration:none; font-size:13px;
+    border-bottom:1px solid rgba(230,197,131,0.4); padding-bottom:2px;
+  }
+  .footer-contacts a:hover{ color:var(--gold-light); border-color:var(--gold-light); }
+  footer .copyright{
+    font-size:11px; color:#7A6659; margin-top:30px; letter-spacing:0.5px;
+  }
+
+  .wa-float{
+    position:fixed; bottom:24px; right:24px; z-index:100;
+    width:60px; height:60px; border-radius:50%;
+    background:#25D366; display:flex; align-items:center; justify-content:center;
+    text-decoration:none;
+    box-shadow:0 10px 26px rgba(0,0,0,0.35);
+    animation:wa-pulse 2.4s ease-in-out infinite;
+  }
+  .wa-float svg{ width:30px; height:30px; }
+  @keyframes wa-pulse{
+    0%,100%{ box-shadow:0 10px 26px rgba(0,0,0,0.35), 0 0 0 0 rgba(37,211,102,0.5); }
+    50%{ box-shadow:0 10px 26px rgba(0,0,0,0.35), 0 0 0 12px rgba(37,211,102,0); }
+  }
+  .wa-tooltip{
+    position:fixed; bottom:36px; right:96px; z-index:100;
+    background:var(--plum); color:var(--ivory);
+    font-size:13px; padding:9px 16px; border-radius:8px;
+    white-space:nowrap; opacity:0; pointer-events:none;
+    transition:opacity 0.2s ease;
+  }
+  .wa-wrap:hover .wa-tooltip{ opacity:1; }
+  @media (max-width:600px){
+    .hero{ padding:70px 6vw 56px; }
+    section{ padding:56px 6vw; }
+    .info-strip{ gap:36px; }
+    .wa-tooltip{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Glam by <span>Joy</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Glam menu</a></li>
+    <li><a href="#policies">Booking info</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="location">📍 Leicester · Available across the Midlands</div>
+  <h1>Glam by Joy</h1>
+  <div class="sub">Makeup Artistry · 9 Years in the Chair</div>
+  <p class="lede">Tailored, glamorous makeup that enhances your natural features and gives you the confidence to feel unforgettable — for date nights, parties, weddings and everything in between.</p>
+  <a class="btn" href="https://wa.me/447424013940" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.001 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.258.593 4.428 1.72 6.353L3.2 28.8l6.6-1.68a12.74 12.74 0 0 0 6.2 1.58h.001c7.07 0 12.8-5.73 12.8-12.8s-5.73-12.7-12.8-12.7Zm0 23.36a10.5 10.5 0 0 1-5.36-1.47l-.385-.228-3.92 1 1.045-3.82-.25-.393a10.53 10.53 0 0 1-1.63-5.65c0-5.83 4.75-10.56 10.6-10.56 5.83 0 10.56 4.73 10.56 10.56 0 5.85-4.73 10.56-10.66 10.56Zm5.8-7.91c-.318-.16-1.88-.93-2.17-1.036-.29-.106-.5-.16-.71.16-.21.318-.81 1.036-.99 1.246-.183.21-.365.238-.683.08-.318-.16-1.343-.494-2.558-1.575-.945-.844-1.583-1.885-1.767-2.203-.185-.318-.02-.49.14-.65.143-.142.318-.37.478-.556.16-.185.212-.318.318-.53.106-.212.053-.397-.026-.556-.08-.16-.71-1.71-.973-2.34-.256-.61-.516-.53-.71-.54-.183-.008-.395-.01-.606-.01-.212 0-.556.08-.847.397-.29.318-1.11 1.084-1.11 2.644 0 1.56 1.136 3.067 1.294 3.28.16.212 2.235 3.414 5.415 4.787.757.327 1.347.522 1.808.668.76.242 1.452.208 1.998.126.61-.09 1.88-.767 2.145-1.508.265-.74.265-1.375.185-1.508-.08-.132-.29-.212-.608-.37Z"/></svg>
+    Book on WhatsApp
+  </a>
+</header>
+
+<section id="about">
+  <div class="section-title">Meet Joy</div>
+  <div class="bio">
+    <p>With over 9 years in the makeup industry, I specialise in working with your natural features to enhance your beauty and bring your makeup vision to life — from flawless soft glam to my signature full glam. With a keen eye for individual beauty, my goal is to give you a tailored, glamorous look that exudes confidence. I prioritise communication and respecting your preferences, so every session feels unforgettable. I can't wait to have you in my chair for the most chatty, girlie glam session — let's create some magic together.</p>
+  </div>
+  <div class="brush-divider">
+    <svg viewBox="0 0 220 20" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 12 C 40 4, 70 18, 110 10 S 180 2, 218 11" fill="none" stroke="#C6994F" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="2" cy="12" r="3" fill="#7A2A41"/>
+      <circle cx="218" cy="11" r="3" fill="#7A2A41"/>
+    </svg>
+  </div>
+  <div class="info-strip">
+    <div>
+      <div class="label">Session hours</div>
+      <div class="value">Weekends &amp; bank holidays<br>Weekdays by request — DM to enquire</div>
+    </div>
+    <div>
+      <div class="label">Location</div>
+      <div class="value">Based in Leicester<br>Available to travel within the Midlands</div>
+    </div>
+    <div>
+      <div class="label">Contact</div>
+      <div class="value">
+        <a href="mailto:info.adandioti@gmail.com">info.adandioti@gmail.com</a><br>
+        <a href="https://instagram.com/Glam_by_Joy" target="_blank" rel="noopener">@Glam_by_Joy</a><br>
+        <a href="https://www.tiktok.com/@GBJ_Leicester" target="_blank" rel="noopener">@GBJ_Leicester MUA</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="section-title">The Glam Menu</div>
+  <div class="menu-list">
+
+    <div class="service">
+      <div class="service-top">
+        <div class="service-name">Signature soft glam</div>
+        <div class="service-price">£60</div>
+      </div>
+      <div class="service-desc">Seamless blending, neutral tones and a perfect balance between natural and glamorous. Perfect for date nights, or for the girlies who don't like to do too much.</div>
+      <div class="service-duration">Longevity 8–12 hours</div>
+    </div>
+
+    <div class="service">
+      <div class="service-top">
+        <div class="service-name">Full glam</div>
+        <div class="service-price">£80</div>
+      </div>
+      <div class="service-desc">Incredibly precise, dramatic and highly defined with meticulous detail. Perfect for birthday parties, owambe occasions and high-energy nights out.</div>
+      <div class="service-duration">Longevity 10–16 hours</div>
+    </div>
+
+    <div class="service">
+      <div class="service-top">
+        <div class="service-name">Special occasion glam</div>
+        <div class="service-price">£90</div>
+      </div>
+      <div class="service-desc">A specially tailored look to fit the significance of your event, outfit and theme — perfect for court weddings, court glams and bridesmaids. Somewhere between a full glam and a specifically curated look.</div>
+    </div>
+
+    <div class="service">
+      <div class="service-top">
+        <div class="service-name">1:1 makeup class <span class="class-note">(3 sessions)</span></div>
+        <div class="service-price">£150</div>
+      </div>
+      <div class="service-desc">Perfect for beginners who already have their own products.</div>
+    </div>
+
+    <div class="service">
+      <div class="service-top">
+        <div class="service-name">1:1 makeup class + kit <span class="class-note">(3 sessions)</span></div>
+        <div class="service-price">£350</div>
+      </div>
+      <div class="service-desc">As above, plus a standard makeup kit to keep and practise with.</div>
+    </div>
+
+  </div>
+</section>
+
+<section id="policies">
+  <div class="section-title">Good to Know</div>
+  <div class="policies-wrap">
+    <div class="policies">
+      <ul>
+        <li>Available weekends and bank holidays — weekdays subject to availability, DM to enquire.</li>
+        <li>All appointments must be booked at least <b>48 hours</b> in advance.</li>
+        <li>A <b>£20 non-refundable deposit</b> is required at booking to secure your slot.</li>
+        <li>Late arrivals get a 15-minute grace period — after that, a <b>£5 lateness fee</b> applies.</li>
+        <li>Cancellations or reschedules need at least <b>24 hours'</b> notice.</li>
+      </ul>
+    </div>
+    <div class="consent-note">
+      As a growing business, we love showcasing our work and sharing photos and videos from client glam sessions. By booking with us, you consent to photos and videos taken at your appointment being used for promotional purposes, including on our social platforms. Prefer not to be featured? Just let us know before or during your appointment and we'll gladly respect your wishes.
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="cta-line">Let's create some magic together.</div>
+  <div class="cta-sub">Tag us in your selfies · Follow us on our socials</div>
+  <div class="footer-contacts">
+    <a href="mailto:info.adandioti@gmail.com">info.adandioti@gmail.com</a>
+    <a href="https://instagram.com/Glam_by_Joy" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@GBJ_Leicester" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://wa.me/447424013940" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="copyright">Glam by Joy — Leicester, Midlands</div>
+</footer>
+
+<div class="wa-wrap">
+  <span class="wa-tooltip">Chat with Joy on WhatsApp</span>
+  <a class="wa-float" href="https://wa.me/447424013940" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" fill="#ffffff"><path d="M16.001 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.258.593 4.428 1.72 6.353L3.2 28.8l6.6-1.68a12.74 12.74 0 0 0 6.2 1.58h.001c7.07 0 12.8-5.73 12.8-12.8s-5.73-12.7-12.8-12.7Zm0 23.36a10.5 10.5 0 0 1-5.36-1.47l-.385-.228-3.92 1 1.045-3.82-.25-.393a10.53 10.53 0 0 1-1.63-5.65c0-5.83 4.75-10.56 10.6-10.56 5.83 0 10.56 4.73 10.56 10.56 0 5.85-4.73 10.56-10.66 10.56Zm5.8-7.91c-.318-.16-1.88-.93-2.17-1.036-.29-.106-.5-.16-.71.16-.21.318-.81 1.036-.99 1.246-.183.21-.365.238-.683.08-.318-.16-1.343-.494-2.558-1.575-.945-.844-1.583-1.885-1.767-2.203-.185-.318-.02-.49.14-.65.143-.142.318-.37.478-.556.16-.185.212-.318.318-.53.106-.212.053-.397-.026-.556-.08-.16-.71-1.71-.973-2.34-.256-.61-.516-.53-.71-.54-.183-.008-.395-.01-.606-.01-.212 0-.556.08-.847.397-.29.318-1.11 1.084-1.11 2.644 0 1.56 1.136 3.067 1.294 3.28.16.212 2.235 3.414 5.415 4.787.757.327 1.347.522 1.808.668.76.242 1.452.208 1.998.126.61-.09 1.88-.767 2.145-1.508.265-.74.265-1.375.185-1.508-.08-.132-.29-.212-.608-.37Z"/></svg>
+  </a>
+</div>
+
+</body>
+</html>
